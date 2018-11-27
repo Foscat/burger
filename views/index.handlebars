@@ -6,8 +6,8 @@
 dlete the info but keep it commented until further notice --}}
 <ul>
   {{#each burgers}}
-    {{#unless}}
-      {{> burgers/burger-block devoured=true}}
+    {{#unless devoured}}
+      {{> burgers/burger-block eaten=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -17,7 +17,7 @@ dlete the info but keep it commented until further notice --}}
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
+      {{> burgers/burger-block eaten=false}}
     {{/if}}
   {{/each}}
 </ul>
