@@ -6,7 +6,7 @@
 dlete the info but keep it commented until further notice --}}
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
+    {{#unless}}
       {{> burgers/burger-block devoured=true}}
     {{/unless}}
   {{/each}}
