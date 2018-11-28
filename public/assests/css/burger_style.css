@@ -21,3 +21,8 @@ li {
 .form-group {
     margin-bottom: 5px;
 }
+
+.slider {
+    height: 200px; 
+    width: 200px
+}
