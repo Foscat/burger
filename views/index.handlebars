@@ -7,7 +7,7 @@ dlete the info but keep it commented until further notice --}}
 <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
-      {{> burgers/burger-block eaten=true}}
+      {{> burgers/burger-block}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -17,7 +17,7 @@ dlete the info but keep it commented until further notice --}}
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block eaten=false}}
+      {{> burgers/burger-block eaten=true}}
     {{/if}}
   {{/each}}
 </ul>
@@ -25,9 +25,17 @@ dlete the info but keep it commented until further notice --}}
 <h2>Add a Burger</h2>
 <form class="create-form">
 
+{{!-- Input for burger name --}}
   <div class="form-group">
     <label for="bn">Burger Name:</label>
     <input type="text" id="bn" name="name">
+  </div>
+
+{{!-- Gives burger a boolean value of being eaten and not --}}
+  <div class="form-group">
+    <label for="sleepy">Has it been eaten?</label><br>
+    <input type="radio" name="devoured" value="1" checked>Somebody already at it..<br>
+    <input type="radio" name="devoured" value="0"> Ready to eat!
   </div>
 
   <button type="submit">Add Burger</button>
