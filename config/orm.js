@@ -51,6 +51,7 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
+    console.log("**orm js Create test**");
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -72,10 +73,11 @@ var orm = {
   },
   // An example of objColVals would be {burger_name: baconburger, devoured: true}
   update: function(table, objColVals, condition, cb) {
+    console.log("**orm js Update test**");
     console.log(table);
     console.log(objColVals);
     console.log(condition);
-    console.log(cd);
+    console.log(cb);
     
     var queryString = "UPDATE " + table;
 
@@ -94,6 +96,7 @@ var orm = {
     });
   },
   delete: function(table, condition, cb) {
+    console.log("**orm js Delete test**");
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
