@@ -7,12 +7,13 @@ $(function() {
   
       console.log("click test 2");
       var newEatenState = {
-        devoured: newEaten
+        devoured: !newEaten
       };
       console.log(newEatenState);
       // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
+      $.ajax({
+        url: `/api/burgers/${id}`,
+        method: "PUT",
         data: newEatenState
       }).then(
         function() {

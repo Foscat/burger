@@ -18,6 +18,12 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/test", (req, res) => {
+  res.json({body: {
+    "test":"test"}
+  })
+})
+
 router.post("/api/burgers", function(req, res) {
   burger.create([
     "burger_name", "devoured"
@@ -42,6 +48,7 @@ router.put("/api/burgers/:id", function(req, res) {
     console.log("**controller Update test**");
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
+      console.log("error with db")
       return res.status(404).end();
     } else {
       res.status(200).end();
