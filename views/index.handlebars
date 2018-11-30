@@ -1,42 +1,80 @@
-<h1>Burger Time!</h1>
+<h1 id="page-head" class="ml-2 marker rounded">Burger Time!</h1>
 
-<h2>Uneaten burgers!!!</h2>
+<div class="row around">
 
-{{!-- Commented out section because that is a refferfin to a js file in the cats exapmle as i go  further i can use or'
-dlete the info but keep it commented until further notice --}}
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block eaten=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+  <div class="col-md-3">
+    <h2 class="col-head rounded marker">Uneaten burgers!!!</h2>
 
-<h2>Ate!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block eaten=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <ul class="uneaten">
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block eaten=false}}
+        {{/unless}}
+      {{/each}}
+    </ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-{{!-- Input for burger name --}}
-  <div class="form-group">
-    <label for="bn">Burger Name:</label>
-    <input type="text" id="bn" name="name">
   </div>
 
-{{!-- Gives burger a boolean value of being eaten and not --}}
-  <div class="form-group">
-    <label for="devoured">Has it been eaten?</label><br>
-    <input type="radio" name="devoured" value="1" checked>Somebody already at it..<br>
-    <input type="radio" name="devoured" value="0"> Ready to eat!
+  <div class="col-md-3 mt-5">
+
+    <div id="burger-maker" class="card" style="width: 18rem;">
+
+      <img class="card-img-top" src="/assests/img/burger maker.jpg" alt="Card image cap">
+
+      <div class="card-body">
+
+        <h5 class="card-title">Make your own burger!</h5>
+
+        <form class="create-form">
+
+          {{!-- Input for burger name --}}
+          <div class="form-group">
+            <label for="bn">Burger Name:</label>
+            <input type="text" id="bn" name="name">
+          </div>
+
+          {{!-- Gives burger a boolean value of being eaten and not --}}
+          <div class="form-group">
+            <label id="radio-label" for="devoured">Has it been eaten?</label><br>
+            <input type="radio" name="devoured" value="1" checked>Somebody already at it..<br>
+            <input type="radio" name="devoured" value="0"> Ready to eat!
+          </div>
+
+          <button class="rounded" type="submit">Add Burger</button>
+
+          </form>
+    
+      </div>
+    </div>
   </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+  <div class="col-md-3">
+
+    <h2 class="col-head rounded marker">Done been ate!</h2>
+
+    <ul class="doneeatin">
+      {{#each burgers}}
+        {{#if devoured}}
+          {{> burgers/burger-block eaten=true}}
+        {{/if}}
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,11 +1,37 @@
 body {
-    background-color: lightgray;
+    background-image: url(../img/burger_background.jpg);
+    background-size: cover;
+    margin: 10px 10px 10px 30px;
 }
-
+.marker {
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(86, 23, 23)
+}
+#page-head{
+    font-size: 60px;
+    background-color: rgb(207, 206, 206);
+    color: rgb(196, 0, 0);
+    width: fit-content;
+    padding: 5px 15px 
+}
+.col-head {
+    width: fit-content;
+    background-color: rgb(231, 231, 231);
+    padding: 3px 6px;
+}
 li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
+    list-style: none;
+}
+.uneaten{
+    float: left;
+    /* width: 25rem; */
+}
+.doneeaten {
+    float: right;
+    /* width: 25rem; */
 }
   
 .label {
@@ -25,4 +51,23 @@ li {
 .slider {
     height: 200px; 
     width: 200px
+}
+
+#burger-maker{
+    background: #faebd7;
+}
+
+/* General wrapper for aligning content to the horozontal center */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* gives even spacing between elements */
+.around {
+    justify-content: space-around;
+}
+/* general class to make things really bold */
+.boldest{
+    font-weight: bolder;
 }
