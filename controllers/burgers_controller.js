@@ -18,10 +18,12 @@ router.get("/", function(req, res) {
   });
 });
 
-// router.get("/api/burgers/list", function(req, res) {
-//   console.log(burger);
-//   res.json(burger);
-// });
+router.get("/api/burgers/list", function(req, res) {
+  burger.all(function(data){
+    res.json(data);
+  });
+  
+});
 
 router.post("/api/burgers", function(req, res) {
   burger.create([

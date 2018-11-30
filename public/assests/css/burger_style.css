@@ -56,7 +56,11 @@ li {
 #burger-maker{
     background: #faebd7;
 }
-
+#json-link{
+    width: fit-content;
+    background-color: wheat;
+    padding: 3px;
+}
 /* General wrapper for aligning content to the horozontal center */
 .center {
     display: flex;
