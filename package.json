@@ -1,7 +1,7 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "The greatest burger making app ever.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/Foscat/burger.git"
   },
-  "author": "",
+  "author": "k-fizzle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Foscat/burger/issues"
