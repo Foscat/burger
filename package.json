@@ -1,11 +1,13 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "The greatest burger making app ever.",
   "main": "server.js",
   "dependencies": {
-    "express-handlebars": "^3.0.0",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^3.0.0",
     "mysql": "^2.16.0"
   },
   "devDependencies": {},
@@ -17,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/Foscat/burger.git"
   },
-  "author": "",
+  "author": "k-fizzle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Foscat/burger/issues"

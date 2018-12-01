@@ -1,9 +1,15 @@
 <li>
-	{{burger_name}}
+	<h2 class="marker">{{burger_name}}</h2>
 
-	<button class="change-eat" data-id="{{this.id}}" data-devoured="{{this.devoured}}">
-		{{#if devoured}}ALL GONE BUSTER!{{else}}EAT UP!{{/if}}
+	<img class="slider" src="/assests/img/burger.png">
+
+	<button class="change-eat boldest rounded" data-id="{{id}}" data-neweaten="{{eaten}}">
+		{{#if eaten}}REMAKE!
+
+		{{else}}DEVOUR!
+
+		{{/if}}
 	</button>
 
-	<button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
+	<button class=" rounded delete-burger" data-id="{{this.id}}">Delete Burger</button>
 </li>

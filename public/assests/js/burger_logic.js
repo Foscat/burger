@@ -1,20 +1,22 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
     $(".change-eat").on("click", function(event) {
+      
       var id = $(this).data("id");
-      var newBurger = $(this).data("newburg");
-  
-      var newBurgerState = {
-        eaten: newBurger
+      var newEaten = $(this).data("neweaten");
+      
+      var newEatenState = {
+        devoured: !newEaten
       };
-  
+      console.log(newEatenState);
       // Send the PUT request.
-      $.ajax("/api/burger/" + id, {
-        type: "PUT",
-        data: newBurgerState
+      $.ajax({
+        url: `/api/burgers/${id}`,
+        method: "PUT",
+        data: newEatenState
       }).then(
         function() {
-          console.log("changed burger to", newBurger);
+          console.log("changed burger to", newEaten);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -26,8 +28,8 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        burger_name: $("#bn").val().trim(),
-        devoured: $("[name=eaten]:checked").val().trim()
+        burger_name: $("#bn").val(),
+        devoured: $("[name=devoured]:checked").val()
       };
   
       // Send the POST request.
@@ -36,22 +38,26 @@ $(function() {
         data: newBurger
       }).then(
         function() {
-          console.log("created new burger");
+          console.log("You made a new burger");
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
   
-    $(".devour-burger").on("click", function(event) {
+    $(".delete-burger").on("click", function(event) {
+
+      console.log("click test 1");
+
       var id = $(this).data("id");
-  
+
+      console.log("click test 2");
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
         type: "DELETE"
       }).then(
         function() {
-          console.log("deleted burger", id);
+          console.log("burger deleted", id);
           // Reload the page to get the updated list
           location.reload();
         }

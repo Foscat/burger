@@ -9,16 +9,19 @@ var burger = {
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("burgers", cols, vals, function(res) {
+      console.log("**burger js Create test**");
       cb(res);
     });
   },
   update: function(objColVals, condition, cb) {
     orm.update("burgers", objColVals, condition, function(res) {
+      console.log("**burger js Update test**");
       cb(res);
     });
   },
   delete: function(condition, cb) {
     orm.delete("burgers", condition, function(res) {
+      console.log("**burger js Delete test**");
       cb(res);
     });
   }

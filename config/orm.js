@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
@@ -30,7 +30,7 @@ function printQuestionMarks(num) {
           value = "'" + value + "'";
         }
         // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
+        // e.g. {devoured: true} => ["devoured=true"]
         arr.push(key + "=" + value);
       }
     }
@@ -51,6 +51,7 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
+    console.log("**orm js Create test**");
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -70,8 +71,14 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // An example of objColVals would be {burger_name: baconburger, devoured: true}
   update: function(table, objColVals, condition, cb) {
+    console.log("**orm js Update test**");
+    console.log(table);
+    console.log(objColVals);
+    console.log(condition);
+    console.log(cb);
+    
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -89,6 +96,7 @@ var orm = {
     });
   },
   delete: function(table, condition, cb) {
+    console.log("**orm js Delete test**");
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
