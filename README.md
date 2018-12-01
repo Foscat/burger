@@ -14,4 +14,11 @@ The user can change the eaten status of exsisting burgers. They can also delete 
 * mysql
 
 ## Main display 
-![Alt text]()
+![Alt text](https://github.com/Foscat/burger/blob/master/public/assests/img/Burgertime.png)
+
+#### For the curious..
+At the lower left portion of the screen the are 3 differant link buttons
+
+1. Large tan button - Lets you see json data of all burgers in database.
+2. Small grey button- Takes you to the main page of this repository.
+3. Small green button - Takes you to my portfolio where all the repos to my projects and contact info can be found.
